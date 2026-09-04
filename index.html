@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sakith Harvan Technologies | Next-Gen Multi-Page Static Engineering</title>
+  <meta name="description" content="Production-ready multi-page static website built with pure HTML5 and CSS3. Fast, accessible, resilient, and requires zero backend or database.">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+
+  <!-- Open Graph Metadata -->
+  <meta property="og:title" content="Sakith Harvan Technologies | Next-Gen Multi-Page Static Engineering">
+  <meta property="og:description" content="Production-ready multi-page static website built with pure HTML5 and CSS3. Zero backend, zero database.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/logo.svg">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Shared Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-link" aria-label="Sakith Harvan Technologies Home">
+        <img src="images/logo.svg" alt="Sakith Harvan Technologies Logo" class="brand-logo" width="36" height="36">
+        <div class="brand-meta">
+          <span class="brand-title">Sakith Harvan</span>
+          <span class="brand-subtitle">Technologies</span>
+        </div>
+      </a>
+
+      <!-- Mobile navigation button -->
+      <button class="mobile-toggle" aria-expanded="false" aria-label="Toggle navigation menu" id="mobile-menu-btn">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <!-- Primary Navigation with aria-current="page" -->
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link" aria-current="page">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary nav-cta">Get in Touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    
+    <!-- Hero Section -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="container">
+        <div class="hero-content">
+          <div class="badge">
+            <span class="badge-dot" aria-hidden="true"></span>
+            Production-Ready Frontend Architecture
+          </div>
+          <h1 id="hero-heading" class="hero-title">
+            Empowering Modern Enterprises with <span class="gradient-text">Pure Static Resilience</span>
+          </h1>
+          <p class="hero-lead">
+            We architect ultra-fast, accessible, and maintenance-free multi-page digital experiences using modern HTML5 and CSS3 — operating with zero backend dependencies and zero database overhead.
+          </p>
+          <div class="btn-group">
+            <a href="services.html" class="btn btn-primary">
+              Explore Our Services
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="about.html" class="btn btn-secondary">Learn About Our Vision</a>
+          </div>
+        </div>
+
+        <!-- Key Metrics Grid -->
+        <div class="stats-grid" aria-label="Company Performance Metrics">
+          <div class="stat-item">
+            <div class="stat-num">100%</div>
+            <div class="stat-label">Static & Secure</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">0ms</div>
+            <div class="stat-label">Database Latency</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">99.9%</div>
+            <div class="stat-label">Hosting Uptime</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">A+</div>
+            <div class="stat-label">Web Accessibility</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Value Proposition Section -->
+    <section class="section section-alt" aria-labelledby="pillars-heading">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge">Core Pillars</div>
+          <h2 id="pillars-heading">Why Choose Serverless Static Websites?</h2>
+          <p>
+            Eliminating server runtimes removes vulnerable attack surfaces, eliminates costly database management, and delivers blazing speed directly via modern Edge CDNs.
+          </p>
+        </div>
+
+        <div class="grid grid-3">
+          <!-- Card 1 -->
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <h3 class="card-title">Zero Security Vulnerabilities</h3>
+            <div class="card-body">
+              <p>Without backend code execution or database queries, common threats like SQL injection and server exploits are completely eliminated.</p>
+            </div>
+            <div class="card-footer">
+              <a href="about.html" class="btn btn-outline" style="width:100%; text-align:center;">Read Our Architecture</a>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+            </div>
+            <h3 class="card-title">Instantaneous Page Loads</h3>
+            <div class="card-body">
+              <p>Pre-rendered static HTML and CSS are served straight from edge caches worldwide, delivering near-instant sub-second response times.</p>
+            </div>
+            <div class="card-footer">
+              <a href="services.html" class="btn btn-outline" style="width:100%; text-align:center;">View Engineering Services</a>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+            </div>
+            <h3 class="card-title">Zero Maintenance Costs</h3>
+            <div class="card-body">
+              <p>No database migrations, no monthly server licensing, and no patching nightmares. Host for free or pennies on GitHub Pages, Netlify, or Vercel.</p>
+            </div>
+            <div class="card-footer">
+              <a href="contact.html" class="btn btn-outline" style="width:100%; text-align:center;">Consult With Us</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Services Preview -->
+    <section class="section" aria-labelledby="featured-services-heading">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge">Solutions</div>
+          <h2 id="featured-services-heading">Engineered for Real-World Reliability</h2>
+          <p>Explore how Sakith Harvan Technologies bridges design, engineering, and accessibility to build enduring web systems.</p>
+        </div>
+
+        <div class="grid grid-2">
+          <div class="card">
+            <h3 class="card-title">Multi-Page Static Sites</h3>
+            <p>Structured, semantic HTML5 layouts designed for business portfolios, documentation centers, and corporate landing pages.</p>
+            <ul class="feature-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Working relative navigation between all pages</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Accessible ARIA landmark labeling & keyboard focus</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Mobile-first CSS grid & flexbox architecture</span>
+              </li>
+            </ul>
+            <div class="card-footer">
+              <a href="services.html" class="btn btn-secondary">Learn More in Services &rarr;</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3 class="card-title">SEO & Standards Compliance</h3>
+            <p>Every page is crafted with unique meta tags, Open Graph card protocols, clean heading cascades, and responsive viewport fidelity.</p>
+            <ul class="feature-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Unique titles and meta descriptions per page</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Integrated SVG favicon and Open Graph assets</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Zero bloated dependencies or fragile runtime trackers</span>
+              </li>
+            </ul>
+            <div class="card-footer">
+              <a href="about.html" class="btn btn-secondary">Our Standards &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Banner Call to Action -->
+        <div style="margin-top: 3.5rem;">
+          <div class="cta-banner">
+            <h2>Ready to Experience Clean, Dependable Web Engineering?</h2>
+            <p>Connect with Sakith Harvan Technologies today. We turn complex requirements into robust, beautifully coded static web projects.</p>
+            <div class="btn-group" style="justify-content: center;">
+              <a href="contact.html" class="btn btn-primary">Start a Project</a>
+              <a href="services.html" class="btn btn-outline">Review All Capabilities</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Shared Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-link" aria-label="Sakith Harvan Technologies">
+            <img src="images/logo.svg" alt="Sakith Harvan Technologies Logo" class="brand-logo" width="32" height="32">
+            <div class="brand-meta">
+              <span class="brand-title">Sakith Harvan</span>
+              <span class="brand-subtitle">Technologies</span>
+            </div>
+          </a>
+          <p>
+            Delivering production-grade frontend engineering, accessible design systems, and robust multi-page static websites.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="404.html">404 Demo</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Architecture</h4>
+          <ul class="footer-nav">
+            <li><a href="services.html">Static Engineering</a></li>
+            <li><a href="services.html">Design Tokens</a></li>
+            <li><a href="services.html">Responsive Grids</a></li>
+            <li><a href="services.html">No-Backend Forms</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Connect</h4>
+          <ul class="footer-nav">
+            <li><a href="mailto:hello@sakithharvan.com">hello@sakithharvan.com</a></li>
+            <li><a href="contact.html">Send an Inquiry</a></li>
+            <li><a href="about.html">Our Philosophy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-tagline">
+          People • Ideas • Technology • A Brighter Tomorrow
+        </div>
+        <div>
+          &copy; 2026 Sakith Harvan Technologies. All rights reserved. 100% Static Frontend.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Menu Toggle Script -->
+  <script>
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const primaryNav = document.getElementById('primary-nav');
+    if (menuBtn && primaryNav) {
+      menuBtn.addEventListener('click', () => {
+        const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+        menuBtn.setAttribute('aria-expanded', !isExpanded);
+        primaryNav.classList.toggle('is-active');
+      });
+    }
+  </script>
+</body>
+</html>
