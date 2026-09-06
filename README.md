@@ -13,9 +13,12 @@ vibe-static-website/
 ├── about.html          # About page (Company mission, principles, philosophy)
 ├── services.html       # Services page (Engineering capabilities, workflow process)
 ├── contact.html        # Contact page (Accessible zero-backend form, direct channels)
+├── login.html          # Session Login (Client-side sessionStorage demo authentication)
 ├── 404.html            # Error page (Friendly 404 error and recovery navigation)
 ├── css/
 │   └── style.css       # Unified design tokens, responsive grid, accessible states
+├── js/
+│   └── auth.js         # Pure frontend session auth state manager (sessionStorage)
 ├── images/
 │   ├── logo.svg        # Scalable brand vector logo
 │   └── favicon.svg     # Scalable SVG favicon

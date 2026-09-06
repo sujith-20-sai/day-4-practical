@@ -45,6 +45,7 @@
           <li><a href="services.html" class="nav-link">Services</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
+        <div class="auth-slot" style="margin-left: 0.5rem;"></div>
         <a href="contact.html" class="btn btn-primary nav-cta">Get in Touch</a>
       </nav>
     </div>
@@ -57,6 +58,10 @@
     <section class="hero" aria-labelledby="hero-heading">
       <div class="container">
         <div class="hero-content">
+          <!-- Session Welcome Banner -->
+          <div id="session-welcome-banner" style="display: none; background: #ecfdf5; border: 1px solid #a7f3d0; color: #065f46; padding: 0.75rem 1.25rem; border-radius: var(--radius); margin-bottom: 1.5rem; font-weight: 500;">
+            🎉 Welcome back, <strong id="banner-user-name">User</strong>! Your client session is active in this tab. <button type="button" onclick="logoutSession()" class="btn-logout" style="margin-left: 0.5rem;">Sign Out</button>
+          </div>
           <div class="badge">
             <span class="badge-dot" aria-hidden="true"></span>
             Production-Ready Frontend Architecture
@@ -253,6 +258,7 @@
             <li><a href="about.html">About Us</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Session Login</a></li>
             <li><a href="404.html">404 Demo</a></li>
           </ul>
         </div>
@@ -288,7 +294,8 @@
     </div>
   </footer>
 
-  <!-- Mobile Menu Toggle Script -->
+  <!-- Scripts -->
+  <script src="js/auth.js"></script>
   <script>
     const menuBtn = document.getElementById('mobile-menu-btn');
     const primaryNav = document.getElementById('primary-nav');

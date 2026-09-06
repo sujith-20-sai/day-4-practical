@@ -833,3 +833,110 @@ textarea.form-control {
     text-align: center;
   }
 }
+
+/* ==========================================================================
+   Client-Side Session Login Components
+   Zero backend / Zero database - Session storage powered
+   ========================================================================== */
+.user-session-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background-color: var(--accent-light);
+  border: 1px solid var(--accent-subtle);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.user-avatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.user-name {
+  color: var(--text);
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.btn-logout {
+  background: none;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  padding: 0.2rem 0.55rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #dc2626;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-logout:hover {
+  background-color: #fef2f2;
+  border-color: #ef4444;
+}
+
+.btn-nav-login {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent);
+  padding: 0.45rem 0.9rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--accent);
+  background: transparent;
+  transition: all 0.15s ease;
+}
+
+.btn-nav-login:hover {
+  background-color: var(--accent-light);
+}
+
+.login-section {
+  padding-block: var(--space-xl);
+  min-height: calc(100vh - 250px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 440px;
+  margin-inline: auto;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.75rem, 5vw, 2.5rem);
+  box-shadow: var(--shadow-lg);
+}
+
+.session-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}

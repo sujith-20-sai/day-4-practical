@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Session Login | Sakith Harvan Technologies</title>
+  <meta name="description" content="Client-side session login demo for Sakith Harvan Technologies. Pure frontend authentication powered by browser sessionStorage.">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+
+  <!-- Open Graph Metadata -->
+  <meta property="og:title" content="Session Login | Sakith Harvan Technologies">
+  <meta property="og:description" content="Client-side session login demo without backend or database.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/logo.svg">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Shared Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-link" aria-label="Sakith Harvan Technologies Home">
+        <img src="images/logo.svg" alt="Sakith Harvan Technologies Logo" class="brand-logo" width="36" height="36">
+        <div class="brand-meta">
+          <span class="brand-title">Sakith Harvan</span>
+          <span class="brand-subtitle">Technologies</span>
+        </div>
+      </a>
+
+      <!-- Mobile navigation button -->
+      <button class="mobile-toggle" aria-expanded="false" aria-label="Toggle navigation menu" id="mobile-menu-btn">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <!-- Primary Navigation -->
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="auth-slot" style="margin-left: 0.5rem;"></div>
+        <a href="contact.html" class="btn btn-primary nav-cta">Get in Touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content" class="login-section">
+    <div class="container">
+      <div class="login-card">
+        
+        <!-- Active Session Card (Hidden unless logged in) -->
+        <div id="already-logged-in" style="display: none; text-align: center;">
+          <div class="session-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Active Session Detected
+          </div>
+          <h1 style="font-size: 1.6rem; margin-bottom: 0.5rem;">Welcome back, <span id="current-user-display" style="color:var(--accent);"></span>!</h1>
+          <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">
+            You currently have an active browser session in this tab.
+          </p>
+          <div class="btn-group" style="justify-content: center;">
+            <a href="index.html" class="btn btn-primary">Go to Home</a>
+            <button type="button" class="btn btn-secondary" onclick="logoutSession()">Sign Out</button>
+          </div>
+        </div>
+
+        <!-- Login Form (Shown when no session exists) -->
+        <div id="login-form-wrapper">
+          <div class="session-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+            Client-Side Session Login
+          </div>
+          <h1 style="font-size: 1.75rem; margin-bottom: 0.5rem;">Sign In to Portal</h1>
+          <p style="font-size: 0.9rem; margin-bottom: 1.25rem;">
+            Experience instant session management in the browser without any database or backend server.
+          </p>
+
+          <div class="form-notice" style="margin-bottom: 1.25rem;">
+            <strong>No Backend / Database:</strong> This session is stored directly in your browser's <code>sessionStorage</code> and persists across all pages in this tab.
+          </div>
+
+          <form id="login-form">
+            <div class="form-group">
+              <label for="username" class="form-label">User Name or Email <span aria-hidden="true" style="color:red;">*</span></label>
+              <input type="text" id="username" name="username" class="form-control" placeholder="e.g. Sujith" required autocomplete="username">
+            </div>
+
+            <div class="form-group">
+              <label for="password" class="form-label">Password <span aria-hidden="true" style="color:red;">*</span></label>
+              <input type="password" id="password" name="password" class="form-control" placeholder="••••••••" required autocomplete="current-password">
+              <small style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem; display: block;">
+                (Demo mode: You can enter any password)
+              </small>
+            </div>
+
+            <div id="login-error" style="display:none; color:#dc2626; background:#fef2f2; padding:0.5rem 0.75rem; border-radius:6px; font-size:0.85rem; margin-bottom:1rem;"></div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">
+              <span>Start Session & Login</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Shared Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-link" aria-label="Sakith Harvan Technologies">
+            <img src="images/logo.svg" alt="Sakith Harvan Technologies Logo" class="brand-logo" width="32" height="32">
+            <div class="brand-meta">
+              <span class="brand-title">Sakith Harvan</span>
+              <span class="brand-subtitle">Technologies</span>
+            </div>
+          </a>
+          <p>
+            Delivering production-grade frontend engineering, accessible design systems, and robust multi-page static websites.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Session Login</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Architecture</h4>
+          <ul class="footer-nav">
+            <li><a href="services.html">Static Engineering</a></li>
+            <li><a href="services.html">Client Sessions</a></li>
+            <li><a href="services.html">Design Tokens</a></li>
+            <li><a href="services.html">No-Backend Forms</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Connect</h4>
+          <ul class="footer-nav">
+            <li><a href="mailto:hello@sakithharvan.com">hello@sakithharvan.com</a></li>
+            <li><a href="contact.html">Send an Inquiry</a></li>
+            <li><a href="about.html">Our Philosophy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-tagline">
+          People • Ideas • Technology • A Brighter Tomorrow
+        </div>
+        <div>
+          &copy; 2026 Sakith Harvan Technologies. All rights reserved. 100% Static Frontend.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/auth.js"></script>
+  <script>
+    // Check if already logged in on page load
+    const user = sessionStorage.getItem('vibe_user');
+    const formWrapper = document.getElementById('login-form-wrapper');
+    const alreadyLoggedIn = document.getElementById('already-logged-in');
+    const userDisplay = document.getElementById('current-user-display');
+
+    if (user && formWrapper && alreadyLoggedIn) {
+      formWrapper.style.display = 'none';
+      alreadyLoggedIn.style.display = 'block';
+      if (userDisplay) userDisplay.textContent = user;
+    }
+
+    // Login Form Submission
+    const loginForm = document.getElementById('login-form');
+    const errorEl = document.getElementById('login-error');
+
+    if (loginForm) {
+      loginForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const username = document.getElementById('username').value.trim();
+        const password = document.getElementById('password').value.trim();
+
+        if (!username || !password) {
+          if (errorEl) {
+            errorEl.textContent = 'Please enter both username and password.';
+            errorEl.style.display = 'block';
+          }
+          return;
+        }
+
+        // Store session in sessionStorage and redirect to home
+        window.loginSession(username, 'index.html');
+      });
+    }
+
+    // Mobile nav toggle
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const primaryNav = document.getElementById('primary-nav');
+    if (menuBtn && primaryNav) {
+      menuBtn.addEventListener('click', () => {
+        const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+        menuBtn.setAttribute('aria-expanded', !isExpanded);
+        primaryNav.classList.toggle('is-active');
+      });
+    }
+  </script>
+</body>
+</html>
