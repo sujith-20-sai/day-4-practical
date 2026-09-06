@@ -1,7 +1,7 @@
 /**
  * Sakith Harvan Technologies - Client-Side Session Authentication
  * Pure Frontend: Uses browser sessionStorage (No backend, No database)
- * Persists for the active browser session tab.
+ * Automatically enforces login guard: opens login.html first if not authenticated.
  */
 
 (function () {
@@ -33,29 +33,42 @@
 
   window.logoutSession = function () {
     clearCurrentUser();
-    window.location.reload();
+    window.location.replace('login.html');
   };
 
   window.loginSession = function (username, redirectUrl) {
     if (!username || !username.trim()) return false;
     setCurrentUser(username);
-    if (redirectUrl) {
-      window.location.href = redirectUrl;
-    }
+    window.location.replace(redirectUrl || 'index.html');
     return true;
   };
 
+  // Immediate Session Route Guard
+  const path = window.location.pathname.toLowerCase();
+  const isLoginPage = path.endsWith('login.html') || path.endsWith('/login');
+  const user = getCurrentUser();
+
+  if (!user && !isLoginPage) {
+    // If user has not logged in, redirect directly to login.html
+    window.location.replace('login.html');
+    return;
+  } else if (user && isLoginPage) {
+    // If already logged in and visiting login.html, redirect directly to index.html
+    window.location.replace('index.html');
+    return;
+  }
+
   function renderAuthUI() {
     const authSlots = document.querySelectorAll('.auth-slot');
-    const user = getCurrentUser();
+    const activeUser = getCurrentUser();
 
     authSlots.forEach((slot) => {
-      if (user) {
-        const initial = user.charAt(0).toUpperCase();
+      if (activeUser) {
+        const initial = activeUser.charAt(0).toUpperCase();
         slot.innerHTML = `
-          <div class="user-session-pill" title="Active Session: ${escapeHtml(user)}">
+          <div class="user-session-pill" title="Active Session: ${escapeHtml(activeUser)}">
             <span class="user-avatar" aria-hidden="true">${initial}</span>
-            <span class="user-name">${escapeHtml(user)}</span>
+            <span class="user-name">${escapeHtml(activeUser)}</span>
             <button type="button" class="btn-logout" onclick="logoutSession()" aria-label="Log out of session">Logout</button>
           </div>
         `;
@@ -73,13 +86,13 @@
       }
     });
 
-    // Check if on home page with welcome banner
+    // Welcome banner on home page
     const welcomeBanner = document.getElementById('session-welcome-banner');
     if (welcomeBanner) {
-      if (user) {
+      if (activeUser) {
         welcomeBanner.style.display = 'block';
         const userEl = document.getElementById('banner-user-name');
-        if (userEl) userEl.textContent = user;
+        if (userEl) userEl.textContent = activeUser;
       } else {
         welcomeBanner.style.display = 'none';
       }
@@ -94,7 +107,7 @@
       .replace(/"/g, '&quot;');
   }
 
-  // Render on DOM loaded
+  // Render on DOM ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', renderAuthUI);
   } else {

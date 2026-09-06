@@ -13,6 +13,13 @@
   <meta property="og:type" content="website">
   <meta property="og:image" content="images/logo.svg">
 
+  <!-- If already logged in, redirect to index.html -->
+  <script>
+    if (sessionStorage.getItem('vibe_user')) {
+      window.location.replace('index.html');
+    }
+  </script>
+
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
